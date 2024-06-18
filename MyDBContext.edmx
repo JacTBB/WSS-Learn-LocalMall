@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LocalMallModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Mall">
+          <Key>
+            <PropertyRef Name="MallId" />
+          </Key>
+          <Property Name="MallId" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Street" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PostalCode" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="128" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lng" Type="float" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="NumOfLikes" Type="int" Nullable="false" />
+          <Property Name="Tel" Type="char" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="MallId" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Level" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="16" />
+          <Property Name="Website" Type="varchar" MaxLength="128" />
+          <Property Name="Tel" Type="char" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="StoreCategory">
+          <Key>
+            <PropertyRef Name="CatCode" />
+          </Key>
+          <Property Name="CatCode" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreCategoryRef">
+          <Key>
+            <PropertyRef Name="StoreId" />
+            <PropertyRef Name="CatCode" />
+          </Key>
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="CatCode" Type="varchar" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Pwd" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Role" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Store_ToMall">
+          <End Role="Mall" Type="Self.Mall" Multiplicity="1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mall">
+              <PropertyRef Name="MallId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="MallId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreCategoryRef_ToStore">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="StoreCategoryRef" Type="Self.StoreCategoryRef" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="StoreId" />
+            </Principal>
+            <Dependent Role="StoreCategoryRef">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreCategoryRef_ToStoreCat">
+          <End Role="StoreCategory" Type="Self.StoreCategory" Multiplicity="1" />
+          <End Role="StoreCategoryRef" Type="Self.StoreCategoryRef" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreCategory">
+              <PropertyRef Name="CatCode" />
+            </Principal>
+            <Dependent Role="StoreCategoryRef">
+              <PropertyRef Name="CatCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LocalMallModelStoreContainer">
+          <EntitySet Name="Mall" EntityType="Self.Mall" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StoreCategory" EntityType="Self.StoreCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StoreCategoryRef" EntityType="Self.StoreCategoryRef" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Store_ToMall" Association="Self.FK_Store_ToMall">
+            <End Role="Mall" EntitySet="Mall" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreCategoryRef_ToStore" Association="Self.FK_StoreCategoryRef_ToStore">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="StoreCategoryRef" EntitySet="StoreCategoryRef" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreCategoryRef_ToStoreCat" Association="Self.FK_StoreCategoryRef_ToStoreCat">
+            <End Role="StoreCategory" EntitySet="StoreCategory" />
+            <End Role="StoreCategoryRef" EntitySet="StoreCategoryRef" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LocalMallModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Mall">
+          <Key>
+            <PropertyRef Name="MallId" />
+          </Key>
+          <Property Name="MallId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Website" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Lat" Type="Double" />
+          <Property Name="Lng" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NumOfLikes" Type="Int32" Nullable="false" />
+          <Property Name="Tel" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK_Store_ToMall" FromRole="Mall" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreId" />
+          </Key>
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="MallId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Level" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Unit" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Tel" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Mall" Relationship="Self.FK_Store_ToMall" FromRole="Store" ToRole="Mall" />
+          <NavigationProperty Name="StoreCategories" Relationship="Self.StoreCategoryRef" FromRole="Store" ToRole="StoreCategory" />
+        </EntityType>
+        <EntityType Name="StoreCategory">
+          <Key>
+            <PropertyRef Name="CatCode" />
+          </Key>
+          <Property Name="CatCode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Stores" Relationship="Self.StoreCategoryRef" FromRole="StoreCategory" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pwd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Role" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Store_ToMall">
+          <End Role="Mall" Type="Self.Mall" Multiplicity="1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mall">
+              <PropertyRef Name="MallId" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="MallId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StoreCategoryRef">
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <End Role="StoreCategory" Type="Self.StoreCategory" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="LocalMallEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Malls" EntityType="Self.Mall" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="StoreCategories" EntityType="Self.StoreCategory" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Store_ToMall" Association="Self.FK_Store_ToMall">
+            <End Role="Mall" EntitySet="Malls" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="StoreCategoryRef" Association="Self.StoreCategoryRef">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="StoreCategory" EntitySet="StoreCategories" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LocalMallModelStoreContainer" CdmEntityContainer="LocalMallEntities">
+          <EntitySetMapping Name="Malls">
+            <EntityTypeMapping TypeName="LocalMallModel.Mall">
+              <MappingFragment StoreEntitySet="Mall">
+                <ScalarProperty Name="MallId" ColumnName="MallId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NumOfLikes" ColumnName="NumOfLikes" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="LocalMallModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="MallId" ColumnName="MallId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreCategories">
+            <EntityTypeMapping TypeName="LocalMallModel.StoreCategory">
+              <MappingFragment StoreEntitySet="StoreCategory">
+                <ScalarProperty Name="CatCode" ColumnName="CatCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LocalMallModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="StoreCategoryRef" TypeName="LocalMallModel.StoreCategoryRef" StoreEntitySet="StoreCategoryRef">
+            <EndProperty Name="Store">
+              <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+            </EndProperty>
+            <EndProperty Name="StoreCategory">
+              <ScalarProperty Name="CatCode" ColumnName="CatCode" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

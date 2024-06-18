@@ -1,0 +1,37 @@
+<StoreCategoryList>
+
+	<StoreCategory>
+		<catCode>arts</catCode>
+		<name>Arts &amp; Crafts</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>BCS</catCode>
+		<name> DB should update this</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>bmc</catCode>
+		<name>Bank &amp; Money Changer</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode> </catCode>
+		<name>DB should not update - Highlight red: Empty Cat code </name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode> DB not update. Red: Empty Name</catCode>
+		<name></name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>New Cat 1 code</catCode>
+		<name> DB should add this new entry</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>toys</catCode>
+		<name>Toys &amp; Collectibles</name>
+	</StoreCategory>
+</StoreCategoryList>

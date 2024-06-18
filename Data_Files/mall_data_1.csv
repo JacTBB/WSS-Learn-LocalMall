@@ -1,0 +1,17 @@
+mallId,name,street,postalCode,website,lat,lng,tel,description,numOfLikes
+313@Somerset,313@Somerset,"313-321 Orchard Rd.",238895,http://www.313somerset.com.sg,1.3013388292213,103.83859992027,+6564969313,"Fast becoming one of the most popular shopping destinations in the Orchard Road belt, 313@somerset is situated right above the Somerset MRT station and boasts well-known fashion brands as well as great dining options.",138238
+AMK,"AMK Hub","53 Ang Mo Kio Ave 3",569933,http://www.amkhub.com.sg,1.3692062748577,103.84862078321,+6567539000,"AMK Hub is a bustling shopping paradise which brings together the best in retail, entertainment, learning and community services.",131600
+ARC,"Alexandra Retail Centre","460 Alexandra Rd",119963,http://www.arc4u.com.sg/,1.2736654208075,103.80157470703,+6563769179,,6501
+ASC,"Anchorpoint Shopping Centre","370 Alexandra Rd",159953,http://www.fraserscentrepointmalls.com/malls/ap/index.asp,1.2887980439235,103.80524282914,+6564752257,,18331
+BJ,"Bugis Junction edited","888 Victoria St.",188021,http://www.bugisjunction-mall.com.sg,1.2991292580675,103.85539054871,+6565576557,"DB should Update. - Name, Street changed",157654
+BJNew,"Bugis Junction Added","999 Victoria St.",188021,http://www.bugisjunction-mall.com.sg,1.2991292580675,103.85539054871,+6565576557,"DB should add this new entry",999999
+,"Bugis Junction error","200 Victoria St.",1880217,http://www.bugisjunction-mall.com.sg,1.2991292580675A,103.85539054871A,+6565576557D,"DB should not update. Should highlight red - mutliple errors",157 D654
+BP,"Bedok Point","799 New Upper Changi Rd",467351,http://www.fraserscentrepointmalls.com/malls/bp/,1.3247108243444,103.93243968487,+6564811353,,29055
+BPP,"Bukit Panjang Plaza","1 Jelebu Rd.",1234567,http://www.bukitpanjangplaza.com.sg,1.3800025668472,103.76421689987,+6563146388,"DB should not update. Highlight red : Error - Postal code",54531
+Bugis,Bugis+,"201 Victoria St.",188067,http://www.bugis-plus.com.sg,1.2996655619233,103.85444641113,+6566346810,"DB should not update. Highlight red : Error - NumOfLikes",12A45
+CCP,"Changi City Point","5 Changi Business Park Central 1",486038,http://www.fraserscentrepointmalls.com/malls/ccp/index.asp,1.334Z5197031477,103.96239995956,+6565111088,"Db should not update. Highlight Red - Invalid Lat",28954
+Cineleisure,"Cineleisure Orchard","8 Grange Rd.",239695,http://www.cineleisure.com.sg,1.3012530206689,103.83702278137,+6567387477,,135725
+CityLink,"CityLink Mall","1 Raffles Link",039393,http://www.citylinkmall.com,1.2923959771724,103.854X48655548,,"DB should not update - Highlight Red - invalid Lng",23301
+Compass,"Compass Point","1 Sengkang Square",545078,http://www.fraserscentrepointmalls.com,1.3920797015748,103.89502286911,1234,"DB should not update. Highlight red - Tel less than 8 digit",100278
+CP,"Causeway Point","1 Woodlands Sq",738099,http://www.fraserscentrepointmalls.com/malls/cwp/index.asp,1.436236865133,103.78626465797,123456789012,"DB should not update. Hightlight red - Tel 12 digits",92146
+CS,"Edited Century Square","2 Tampines Central 5",529509,http://www.centurysquare.com.sg,1.3526688685857,103.94406354182,+6567896261,"DB should update. Name changes",34025

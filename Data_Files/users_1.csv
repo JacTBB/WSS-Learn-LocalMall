@@ -1,0 +1,10 @@
+UserId,Password,Role
+Steve,DB should Update - Password,Admin
+Steve,DB should not update - highligh red: Role Empty,
+Daniel,3lecti0$%^,Member
+Daniel,,Member
+threatencreamy1,DB should add this entry,Member
+threatencreamy,DB should update - Role changed,Admin
+,DB should not update - highligh red: User Id Empty,Member
+,,Member
+jowlferrari,Apicent,Member

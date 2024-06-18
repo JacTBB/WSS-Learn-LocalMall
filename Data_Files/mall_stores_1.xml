@@ -1,0 +1,69 @@
+<StoreList>
+
+	<Store>
+		<storeId>1</storeId>
+		<mallId>CSC</mallId>
+		<name> DB should update this - Updated MallID, level, unit, website, Cat</name>
+		<level>99</level>
+		<unit>99</unit>
+		<website>New Website</website>
+		<tel></tel>
+		<category>toys,F</category>
+	</Store>
+
+	<Store>
+		<storeId>2A</storeId>
+		<mallId>313@Somerset</mallId>
+		<name> DB should not updated. Highlight Red: Invalid StoreID</name>
+		<level>4</level>
+		<unit>04a</unit>
+		<website>http://www.actioncity.com.sg</website>
+		<tel>68847518</tel>
+		<category>GH</category>
+	</Store>
+
+	<Store>
+		<storeId>3</storeId>
+		<mallId>313@Somerset</mallId>
+		<name> DB should update this. Truncate Level to 8888</name>
+		<level>8888000</level>
+		<unit>40</unit>
+		<website>http://www.aldoshoes.com</website>
+		<tel>68846011</tel>
+		<category>BSA</category>
+	</Store>
+
+	<Store>
+		<storeId>4</storeId>
+		<mallId>313@Somerset</mallId>
+		<name>American Express Currency Exchange</name>
+		<level>1</level>
+		<unit>31</unit>
+		<website>http://www.americanexpress.com/sg</website>
+		<tel>66367305</tel>
+		<category>Services</category>
+	</Store>
+
+	<Store>
+		<storeId>5000</storeId>
+		<mallId>313@Somerset</mallId>
+		<name> DB should not update. Highlight Red: Invalid Tel</name>
+		<level>B1</level>
+		<unit>15</unit>
+		<website>http://www.annanucci.com/</website>
+		<tel>123456789012345</tel>
+		<category>BSA</category>
+	</Store>
+
+	<Store>
+		<storeId>6</storeId>
+		<mallId>313@Somerset</mallId>
+		<name> DB should update this - Updated Categories</name>
+		<level>1</level>
+		<unit>25b</unit>
+		<website>http://www.baotoday.com</website>
+		<tel>67353005</tel>
+		<category>Services,GH</category>
+	</Store>
+
+</StoreList>

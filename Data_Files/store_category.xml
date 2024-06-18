@@ -1,0 +1,107 @@
+<StoreCategoryList>
+
+	<StoreCategory>
+		<catCode>arts</catCode>
+		<name>Arts &amp; Crafts</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>BCS</catCode>
+		<name>Books and Stationery</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>bmc</catCode>
+		<name>Bank &amp; Money Changer</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>BSA</catCode>
+		<name>Leather Goods, Bags &amp; Shoes </name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>cp</catCode>
+		<name>Clubs &amp; Pubs</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>cwtm</catCode>
+		<name>Children&#39;s Wear, Toys &amp; Maternity </name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>E</catCode>
+		<name>Entertainment</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>EL</catCode>
+		<name>Electronics &amp; Telecommunication</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>F</catCode>
+		<name>Fashion Wear &amp; Accessories</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>ffh</catCode>
+		<name>Furniture, Furnishings &amp; Household</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>Food</catCode>
+		<name>Food &amp; Restaurants</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>GH</catCode>
+		<name>Gifts</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>hb</catCode>
+		<name>Hair &amp; Beauty </name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>HW</catCode>
+		<name>Health &amp; Wellness</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>JW</catCode>
+		<name>Jewellery &amp; Watches</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>O</catCode>
+		<name>Optical</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>Others</catCode>
+		<name>Others</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>S</catCode>
+		<name>Department Stores &amp; Supermarkets</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>Services</catCode>
+		<name>Services</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>Sports</catCode>
+		<name>Sports &amp; Leisure</name>
+	</StoreCategory>
+
+	<StoreCategory>
+		<catCode>toys</catCode>
+		<name>Toys &amp; Collectibles</name>
+	</StoreCategory>
+</StoreCategoryList>
